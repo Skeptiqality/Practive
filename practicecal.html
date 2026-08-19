@@ -67,6 +67,7 @@
         padding: 2rem;
       }
 
+      /* modal popup */
       .surprise {
         position: absolute;
         z-index: 998;
@@ -83,6 +84,7 @@
 
       .surprise img {
         height: 100dvh;
+        user-select: none;
       }
 
       .surprise span {
@@ -98,6 +100,7 @@
         color: white;
       }
 
+      /* content video */
       .content1 {
         display: flex;
       }
@@ -106,6 +109,7 @@
         width: 20rem;
       }
 
+      /* content desc */
       .desc {
         flex-grow: 1;
         margin: 0 4rem;
@@ -128,6 +132,7 @@
             display: none;
         } */
 
+      /* mordern marquee */
       .marching {
         display: flex;
         overflow: hidden;
@@ -180,7 +185,7 @@
         <span id="close"
           ><i class="fa-solid fa-xmark" onclick="closeSurprise()"></i
         ></span>
-        <img src="Media/jumpscare.jpg" />
+        <img src="Media/jumpscare.jpg" draggable="false">
         <audio src="Media/scream.mp3" id="scream" preload="auto" loop></audio>
       </div>
 
@@ -234,7 +239,7 @@
   <script>
     function surprise() {
       const surprise = document.getElementById("surprise");
-      surprise.style.top = `${window.scrollY}px`;
+      surprise.style.top = `${window.scrollY}px`; // so the popup shows wherever the window is on the website
       surprise.classList.add("active");
       document.documentElement.classList.add("active");
 
