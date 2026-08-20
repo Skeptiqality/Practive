@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Comic Sans MS;
+  font-size: 1rem;
+}
+
+html {
+  scrollbar-width: thin;
+}
+html.active {
+  overflow: hidden;
+}
+
+body {
+  text-align: center;
+}
+
+/* Header */
+header {
+  padding: 0.7rem 2rem;
+  background: black;
+  position: sticky;
+  top: 0;
+  z-index: 997;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navlogo {
+  height: 3rem;
+  width: 10rem;
+}
+
+.navlinks {
+  width: 15rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navlinks a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.navlinks a:hover {
+  color: cyan;
+}
+
+/* main */
+main {
+  padding: 2rem;
+}
+
+/* modal popup */
+.surprise {
+  position: absolute;
+  z-index: 998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  display: none;
+}
+
+.surprise.active {
+  display: block;
+}
+
+.surprise img {
+  height: 100dvh;
+  user-select: none;
+}
+
+.surprise span {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.surprise span i {
+  font-size: 2rem;
+  color: white;
+}
+
+/* content video */
+.content1 {
+  display: flex;
+}
+
+.video video {
+  width: 20rem;
+}
+
+/* content desc */
+.desc {
+  flex-grow: 1;
+  margin: 0 4rem;
+}
+
+.desc h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.desc p {
+  text-align: justify;
+  font-size: 1.1rem;
+  max-height: 23rem;
+  overflow: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+} /* .desc p::-webkit-scrollbar {
+            display: none;
+        } */
+
+/* mordern marquee */
+.marching {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+#soldiers {
+  width: 10rem;
+  display: flex;
+  animation: scroll-left 7s linear infinite;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 800px) {
+  .desc p {
+    text-align: left;
+  }
+}
